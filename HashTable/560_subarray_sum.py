@@ -47,6 +47,7 @@ class Solution2:
     	hashmap = collection.defaultdict(int)
     	hashmap[0] = 1
     	cusum = 0
+        cnt = 0
     	for i in range(len(nums)):
     		cusum = cusum + nums[i]
 
