@@ -10,4 +10,4 @@ class Solution(object):
 	        if target - nums[i] in dic:
 	            return [dic[target-nums[i]],i]
 	        else:
-	            dic[nums[i]]=i
+	            dic[nums[i]]=i # 注意 key是数值， value 是index
