@@ -64,46 +64,40 @@ class Solution:
 # Space O(1) 或者 O（n)-> space required for storing sorted array
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        if len(nums) < 3: return []
-        nums.sort()
-        """
-        idx,jdx,kdx represent the index of the three numbers, also idx<jdx<kdx
-        """
         
-        idx = 0
         res = []
-        while idx<len(nums) - 2:
-            if idx > 0 and nums[idx] == nums[idx-1]: #每到一位跟前一位比较，如相同则跳过
-                idx +=1
-         
-                continue # continue 跳过此轮 进入下一轮 
-            
-            jdx = idx +1
-            kdx = len(nums)-1
-            
-            while jdx < kdx:
-                s = nums[idx] + nums[jdx] + nums[kdx]
-                if s == 0:
-                    res.append([nums[idx], nums[jdx], nums[kdx]])
+        nums.sort()
+        
+        for i in range(len(nums)):
+            if i > 0 and nums[i] == nums[i-1]: continue
+                
+            l = i+1
+            r = len(nums) - 1
+                 
+            while l < r:
+                
+                if nums[i] + nums[l] + nums[r] == 0:
                     
-                    while jdx < kdx and nums[jdx] == nums[jdx +1]:#不能用if 
-                        jdx += 1
-                    
-                    while jdx < kdx and nums[kdx] == nums[kdx -1]:
-                         kdx -= 1
+                
+                    res.append([nums[i], nums[l], nums[r]])
+                    l+=1
+                    r-=1
+                    while l<r and nums[l]==nums[l-1]: l+=1
+                    # while l<r and nums[r]==nums[r-1]: r-=1
                         
-                        
-                    jdx += 1
-                    kdx -= 1
+                    # l+=1
+                    # r-=1
+                elif nums[i] + nums[l] +nums[r] >0:
                     
-                elif s< 0:
-                    jdx +=1
+                    r-=1
                 else:
-                    kdx -=1
-            idx +=1
+                    l+=1
         return res
                     
-                    
+                 
+                 
+                  
+                
                     
             
             
