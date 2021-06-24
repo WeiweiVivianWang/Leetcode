@@ -20,4 +20,5 @@ class Solution:
             #下一层搜索
             self.dfs(nums,i+1,subset,res)
             #回溯
-            del subset[-1]
+            
+            subset.pop()

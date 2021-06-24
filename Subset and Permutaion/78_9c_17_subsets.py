@@ -19,7 +19,7 @@ class Solution:
             
             self.dfs(nums,i+1,subset,res)
             #回溯
-            del subset[-1]
+            subset.pop()
 
 
 #backtracking + dfs
