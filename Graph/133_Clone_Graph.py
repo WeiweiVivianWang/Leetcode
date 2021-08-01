@@ -43,3 +43,10 @@ class Solution(object):
                     result.add(neighbor)
                     q.append(neighbor)
         return result
+
+
+#Time Complexity : O(N + M), where N is a number of nodes (vertices) and M is a number of edges.
+
+# Space Complexity : O(N). This space is occupied by the visited dictionary and in addition to that, space would also be occupied by the queue since we are adopting the BFS approach here. 
+#The space occupied by the queue would be equal to O(W)O(W) where WW is the width of the graph. Overall, the space complexity would be O(N)O(N).
+

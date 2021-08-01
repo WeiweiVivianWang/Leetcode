@@ -18,7 +18,7 @@ class Solution:
             if not self.isPalindrome(substr):
                 continue
             path.append(substr)
-            self.dfs(s,i+1,path,result)
+            self.dfs(s,i+1,path,result) #因为之前是i结束，下一层从i+1开始检查字符串
             path.pop()
         
     def isPalindrome(self, s):

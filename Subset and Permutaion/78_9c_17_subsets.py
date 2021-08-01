@@ -2,22 +2,22 @@ class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         #排序
         nums.sort()
-        res = []
+        result = []
         subset = []
         #dfs搜索
-        self.dfs(nums,0,subset, res)
+        self.dfs(nums,0,subset, result)
         return res
         
     def dfs(self,nums,k,subset,res):
         #当前组合存入res
-        res.append(subset[:]) #The [:] makes a shallow copy of the array, hence  when you modify memory (subset), won't affect copy.
+        result.append(subset[:]) #The [:] makes a shallow copy of the array, hence  when you modify memory (subset), won't affect copy.
         # print('...',res)
         #为subset新增一位元素
-        for i in range(k,len(nums)):
+        for i in range(k,len(nums)): #从k开始保证不会用到之前用过的元素
             subset.append(nums[i])
             #下一层搜索
             
-            self.dfs(nums,i+1,subset,res)
+            self.dfs(nums,i+1,subset,result)
             #回溯
             subset.pop()
 
