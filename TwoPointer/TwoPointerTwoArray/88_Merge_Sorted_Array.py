@@ -53,7 +53,7 @@ class Solution:
 
 #Time O(m+n)
 #Space O(1)
-#三个pointer start from the end
+#三个pointer start from the end #!!!从大开始比较， 从后往前append！！！！
 #set p1 to point at index m - 1 of nums1, p2 to point at index n - 1 of nums2, 
 #and p to point at index m + n - 1 of nums1. 
 #This way, it is guaranteed that once we start overwriting the first m values in nums1, 
